@@ -1,0 +1,16 @@
+.form-container {
+  margin-top: 1.8%;
+  margin-bottom: 1rem;
+  background-color: #393e46;
+  padding: 4%;
+  width: 80%;
+  border-radius: 12px;
+}
+
+@media (min-width: 580px) {
+  .form-container {
+    margin-top: 1.8%;
+    width: 50%;
+    padding: 1%;
+  }
+}
