@@ -13,7 +13,7 @@ const App = () => {
 
   const createItem = (data) => {
     addExpenses((prevState) => {
-      return [...prevState, data];
+      return [data, ...prevState];
     });
   };
 

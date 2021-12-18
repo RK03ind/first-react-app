@@ -6,7 +6,7 @@ const ExpenseFilter = (props) => {
   return (
     <div className="filter-container">
       <span>Filter by Year</span>
-      <select onChange={yearChangeHandler}>
+      <select value={props.value} onChange={yearChangeHandler}>
         <option value="2019">2019</option>
         <option value="2020">2020</option>
         <option value="2021">2021</option>

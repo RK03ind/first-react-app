@@ -3,15 +3,12 @@ import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = (props) => {
-  const [year, setYear] = useState(2020);
+  const [year, setYear] = useState(2021);
 
-  const onFilter = (data) => {
-    setYear(data);
-  };
   console.log(year);
   return (
     <>
-      <ExpenseFilter postYear={onFilter} />
+      <ExpenseFilter value={year} postYear={setYear} />
       {props.expenses.map((expenses) => (
         <ExpenseItem
           title={expenses.title}
