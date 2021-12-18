@@ -5,8 +5,8 @@ import ExpenseInput from "./components/NewExpense/ExpenseInput";
 const App = () => {
   const [expenses, addExpenses] = useState([
     {
-      title: "Sample",
-      amount: "6969",
+      title: "Sample Data",
+      amount: "999",
       date: new Date(2021, 2, 22),
       id: Math.random() * 1000,
     },
