@@ -1,28 +1,20 @@
+import { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import ExpenseInput from "./components/NewExpense/ExpenseInput";
 
 const App = () => {
-  const expenses = [
+  const [expenses, addExpenses] = useState([
     {
-      title: "Electricity",
-      amount: "356",
+      title: "Sample",
+      amount: "6969",
       date: new Date(2022, 2, 22),
     },
-    {
-      title: "Internet",
-      amount: "3556",
-      date: new Date(2022, 2, 22),
-    },
-    {
-      title: "Newspaper",
-      amount: "69",
-      date: new Date(2022, 2, 22),
-    },
-  ];
+  ]);
 
   const createItem = (data) => {
-    console.log(data);
-    console.log("from app.js");
+    addExpenses((prevState) => {
+      return [...prevState, data];
+    });
   };
 
   return (
