@@ -5,7 +5,7 @@ const ExpenseInput = (props) => {
   const PostDataHandler = (data) => {
     const expenseData = {
       ...data,
-      id: Math.random(),
+      id: Math.random() * 1000,
     };
     props.itemData(expenseData);
   };

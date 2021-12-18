@@ -5,17 +5,23 @@ import ExpenseFilter from "./ExpenseFilter";
 const Expenses = (props) => {
   const [year, setYear] = useState(2021);
 
-  console.log(year);
   return (
     <>
       <ExpenseFilter value={year} postYear={setYear} />
-      {props.expenses.map((expenses) => (
-        <ExpenseItem
-          title={expenses.title}
-          amount={expenses.amount}
-          date={expenses.date}
-        />
-      ))}
+      {props.expenses
+        .filter((expenses) => {
+          if (year == expenses.date.getFullYear()) {
+            return expenses;
+          }
+        })
+        .map((expenses) => (
+          <ExpenseItem
+            key={expenses.id}
+            title={expenses.title}
+            amount={expenses.amount}
+            date={expenses.date}
+          />
+        ))}
     </>
   );
 };

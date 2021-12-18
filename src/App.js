@@ -8,6 +8,7 @@ const App = () => {
       title: "Sample",
       amount: "6969",
       date: new Date(2022, 2, 22),
+      id: Math.random() * 1000,
     },
   ]);
 
