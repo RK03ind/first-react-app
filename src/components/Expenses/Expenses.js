@@ -3,16 +3,18 @@ import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = (props) => {
-  const [year, setYear] = useState(2021);
+  const [year, setYear] = useState("2021");
 
   const filteredArray = props.expenses.filter((expenses) => {
-    if (year == expenses.date.getFullYear()) return expenses;
-    return false;
+    return year === expenses.date.getFullYear().toString();
   });
 
   return (
     <>
       <ExpenseFilter value={year} postYear={setYear} />
+      {filteredArray.length === 0 && (
+        <p className="no-data">No expenses found !!</p>
+      )}
       {filteredArray.map((expenses) => (
         <ExpenseItem
           key={expenses.id}
