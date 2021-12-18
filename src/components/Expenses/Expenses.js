@@ -1,8 +1,10 @@
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = (props) => {
   return (
     <>
+      <ExpenseFilter />
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
