@@ -32,18 +32,22 @@ const ExpenseForm = (props) => {
 
   const onsubmitHandler = (event) => {
     event.preventDefault();
-    props.postData(userInput);
+    if (userInput.amount && userInput.date && userInput.title !== "") {
+      props.postData(userInput);
+      setUserInput({ ...userInput, amount: "", title: "" });
+    }
   };
+
   return (
     <form onSubmit={onsubmitHandler}>
       <div className="text-input">
         <div>
           <label>Expense Name</label>
-          <input type="text" onChange={titleChanged} />
+          <input type="text" value={userInput.title} onChange={titleChanged} />
         </div>
         <div>
           <label>Amount</label>
-          <input type="number" onChange={amtChanged} />
+          <input type="number" value={userInput.amount} onChange={amtChanged} />
         </div>
       </div>
 

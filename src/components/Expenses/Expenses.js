@@ -1,10 +1,17 @@
+import { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = (props) => {
+  const [year, setYear] = useState(2020);
+
+  const onFilter = (data) => {
+    setYear(data);
+  };
+  console.log(year);
   return (
     <>
-      <ExpenseFilter />
+      <ExpenseFilter postYear={onFilter} />
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
