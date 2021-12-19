@@ -10,13 +10,18 @@ const Expenses = (props) => {
     return year === expenses.date.getFullYear().toString();
   });
 
+  if (filteredArray.length === 0) {
+    return (
+      <>
+        <ExpenseFilter value={year} postYear={setYear} />
+        <p className="no-data">No expenses found !!</p>
+      </>
+    );
+  }
   return (
     <>
       <Chart data={filteredArray} />
       <ExpenseFilter value={year} postYear={setYear} />
-      {filteredArray.length === 0 && (
-        <p className="no-data">No expenses found !!</p>
-      )}
       {filteredArray.map((expenses) => (
         <ExpenseItem
           key={expenses.id}

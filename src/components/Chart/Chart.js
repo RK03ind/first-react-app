@@ -52,13 +52,12 @@ const Chart = (props) => {
     },
   ];
   let maxValue = 0;
-  console.log(props.data);
   props.data.map((expense) => {
     monthFiltered[expense.date.getMonth()].value += parseInt(expense.amount);
     maxValue += parseInt(expense.amount);
+
     return expense;
   });
-
   return (
     <div className="chart-container">
       {monthFiltered.map((eachMonth) => (
