@@ -13,6 +13,7 @@ const Expenses = (props) => {
   if (filteredArray.length === 0) {
     return (
       <>
+        <Chart data={filteredArray} />
         <ExpenseFilter value={year} postYear={setYear} />
         <p className="no-data">No expenses found !!</p>
       </>

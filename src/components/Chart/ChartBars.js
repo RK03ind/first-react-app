@@ -1,5 +1,9 @@
 const ChartBars = (props) => {
-  let barFill = (props.value / props.max) * 100 + "%";
+  let barFill = 0;
+
+  if (props.max > 0) {
+    barFill = (props.value / props.max) * 100 + "%";
+  }
 
   const fillStyle = { height: barFill };
 
