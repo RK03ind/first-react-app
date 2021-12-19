@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
+import Chart from "../Chart/Chart";
 
 const Expenses = (props) => {
   const [year, setYear] = useState("2021");
@@ -11,6 +12,7 @@ const Expenses = (props) => {
 
   return (
     <>
+      <Chart data={filteredArray} />
       <ExpenseFilter value={year} postYear={setYear} />
       {filteredArray.length === 0 && (
         <p className="no-data">No expenses found !!</p>
