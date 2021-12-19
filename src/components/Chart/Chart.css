@@ -19,7 +19,7 @@
 .bar {
   height: 100%;
   width: 100%;
-  border: 1px solid #d4ecdd;
+  border: 1.6px solid #d4ecdd;
   display: flex;
   align-items: flex-end;
   border-top-right-radius: 112px;
