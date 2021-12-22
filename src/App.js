@@ -29,7 +29,7 @@ function createCookie(name, value) {
 
 const App = () => {
   const [expenses, addExpenses] = useState(getCookie("mycookie"));
-  console.log(getCookie("mycookie"));
+
   const createItem = (data) => {
     addExpenses((prevState) => {
       var arr = [data, ...prevState];
